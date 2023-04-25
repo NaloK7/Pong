@@ -22,8 +22,9 @@ public class WallBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("Ball"))
         {
             Vector2 entre = other.GetContact(0).normal;
-            other.gameObject.GetComponent<Rigidbody2D>().AddForce(entre * -BallForce);
-            
+            Debug.Log(Vector2.Reflect(other.gameObject.GetComponent<Rigidbody2D>().velocity, other.contacts[0].normal));
+            other.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.Reflect(this.GetComponent<Rigidbody2D>().velocity, other.contacts[0].normal));
+
         }
     }
 }

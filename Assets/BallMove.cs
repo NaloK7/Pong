@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 
@@ -7,7 +8,8 @@ public class BallMove : MonoBehaviour
 {
     public float InitForce;
     public float MoveSpeed;
-    public float random;
+    float random;
+    public TMP_Text endGameMessage;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,19 @@ public class BallMove : MonoBehaviour
     void Update()
     {
 
+    }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("LeftWall"))
+        {
+            endGameMessage.text = "Player 2\nWIN";
+            Time.timeScale = 0;
+        }
+        if (other.gameObject.CompareTag("RightWall"))
+        {
+            endGameMessage.text = "Player 1\nWIN";
+            Time.timeScale = 0;
+        }
     }
 
 }

@@ -20,6 +20,7 @@ public class RightPaddleMove : MonoBehaviour
         // RIGHT PLAYER
         if (Input.GetKey(KeyCode.UpArrow))  // up
         {
+            // Vector2.up = new Vector2(0, 1);
             GetComponent<Rigidbody2D>().AddForce(Vector2.up * PaddleSpeed);
         }
         if (Input.GetKey(KeyCode.DownArrow))  // down
