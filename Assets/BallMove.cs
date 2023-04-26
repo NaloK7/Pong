@@ -39,6 +39,7 @@ public class BallMove : MonoBehaviour
     {
 
     }
+    
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("LeftWall"))
@@ -50,6 +51,13 @@ public class BallMove : MonoBehaviour
         {
             endGameMessage.text = "Player 1\nWIN";
             Time.timeScale = 0;
+        }
+        if (other.gameObject.CompareTag("BallBouncer"))
+        {
+            // need to add 360° to vector2 of this.Gameobject
+            Debug.Log("vu");
+            
+
         }
     }
 
