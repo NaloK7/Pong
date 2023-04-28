@@ -13,25 +13,26 @@ public class BallMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        random = Random.Range(1, 5);
-        if (random == 1)
-        {
-            GetComponent<Rigidbody2D>().AddForce((Vector2.up + Vector2.right) * InitForce);
-        }
-        if (random == 2)
-        {
-            GetComponent<Rigidbody2D>().AddForce((Vector2.up + Vector2.left) * InitForce);
-        }
-        if (random == 3)
-        {
-            GetComponent<Rigidbody2D>().AddForce((Vector2.down + Vector2.right) * InitForce);
+        GetComponent<Rigidbody2D>().AddForce(GetRandomDirection() * InitForce);
+        //random = Random.Range(1, 5);
+        //if (random == 1)
+        //{
+        //    GetComponent<Rigidbody2D>().AddForce((Vector2.up + Vector2.right) * InitForce);
+        //}
+        //if (random == 2)
+        //{
+        //    GetComponent<Rigidbody2D>().AddForce((Vector2.up + Vector2.left) * InitForce);
+        //}
+        //if (random == 3)
+        //{
+        //    GetComponent<Rigidbody2D>().AddForce((Vector2.down + Vector2.right) * InitForce);
 
-        }
-        if (random == 4)
-        {
-            GetComponent<Rigidbody2D>().AddForce((Vector2.down + Vector2.left) * InitForce);
+        //}
+        //if (random == 4)
+        //{
+        //    GetComponent<Rigidbody2D>().AddForce((Vector2.down + Vector2.left) * InitForce);
 
-        }
+        //}
     }
 
     // Update is called once per frame
@@ -59,6 +60,12 @@ public class BallMove : MonoBehaviour
             
 
         }
+    }
+    Vector2 GetRandomDirection()
+    {
+        float x = Random.Range(-1.0f, 1.0f);
+        float y = Random.Range(-1.0f, 1.0f);
+        return new Vector2(x, y);
     }
 
 }
