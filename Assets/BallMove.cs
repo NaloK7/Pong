@@ -53,13 +53,13 @@ public class BallMove : MonoBehaviour
             endGameMessage.text = "Player 1\nWIN";
             Time.timeScale = 0;
         }
-        if (other.gameObject.CompareTag("BallBouncer"))
-        {
-            // need to add 360° to vector2 of this.Gameobject
-            Debug.Log("vu");
+        //if (other.gameObject.CompareTag("BallBouncer"))
+        //{
+        //    // need to add 360° to vector2 of this.Gameobject
+        //    Debug.Log("vu");
             
 
-        }
+        //}
     }
     Vector2 GetRandomDirection()
     {
