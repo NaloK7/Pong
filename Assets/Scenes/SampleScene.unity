@@ -457,7 +457,7 @@ GameObject:
   - component: {fileID: 533680336}
   m_Layer: 0
   m_Name: TopWall
-  m_TagString: Untagged
+  m_TagString: BallBouncer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -804,7 +804,7 @@ GameObject:
   - component: {fileID: 996792919}
   m_Layer: 0
   m_Name: BottomWall
-  m_TagString: Untagged
+  m_TagString: BallBouncer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -962,7 +962,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 5
 --- !u!61 &1105060304
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1657,6 +1657,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftPaddle
       objectReference: {fileID: 0}
+    - target: {fileID: 4813731723506687384, guid: a337bfcc9da0bef4995686005fe96c52, type: 3}
+      propertyPath: m_TagString
+      value: BallBouncer
+      objectReference: {fileID: 0}
     - target: {fileID: 4813731723506687385, guid: a337bfcc9da0bef4995686005fe96c52, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -1894,6 +1898,10 @@ PrefabInstance:
     - target: {fileID: 6555157189215670566, guid: f3b103b9ef881694cbc159d66d555727, type: 3}
       propertyPath: m_Name
       value: RightPaddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555157189215670566, guid: f3b103b9ef881694cbc159d66d555727, type: 3}
+      propertyPath: m_TagString
+      value: BallBouncer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3b103b9ef881694cbc159d66d555727, type: 3}

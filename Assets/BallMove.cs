@@ -55,7 +55,7 @@ public class BallMove : MonoBehaviour
         if (other.gameObject.CompareTag("BallBouncer"))
         {
             // need to add 360° to vector2 of this.Gameobject
-            Debug.Log("vu");
+            //Debug.Log("vu");
             
 
         }
