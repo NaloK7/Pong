@@ -16,7 +16,7 @@ public class restart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.R)) {
+        if (Input.GetKey(KeyCode.R) && Time.timeScale == 0) {
             Time.timeScale = 1;
             Retry();
         }

@@ -15,8 +15,6 @@ public class BallMove : MonoBehaviour
     void Start()
     {
         Invoke("StartGame", 1);
-        
-
     }
 
     // Update is called once per frame
@@ -32,13 +30,13 @@ public class BallMove : MonoBehaviour
         if (other.gameObject.CompareTag("LeftWall"))
         {
 
-            endGameMessage.text = "Player 2\nWIN";
+            endGameMessage.text = "Player 2\nWIN\n'R' To restart" ;
             Time.timeScale = 0;
 
         }
         if (other.gameObject.CompareTag("RightWall"))
         {
-            endGameMessage.text = "Player 1\nWIN";
+            endGameMessage.text = "Player 1\nWIN\n'R' To restart";
             Time.timeScale = 0;
 
         }
