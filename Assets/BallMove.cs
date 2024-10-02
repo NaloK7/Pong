@@ -8,6 +8,7 @@ public class BallMove : MonoBehaviour
 {
     public float InitForce;
     public float MoveSpeed;
+    public float maxSpeed;
     public GameManager gameManager;
 
     void Start()
@@ -19,7 +20,7 @@ public class BallMove : MonoBehaviour
     
     void Update()
     {
- 
+        LimitBallSpeed();
     }
     
     private void OnCollisionEnter2D(Collision2D other)
@@ -34,7 +35,14 @@ public class BallMove : MonoBehaviour
             
             gameManager.EndGame("Player 1");
         }
-
+        else if (other.gameObject.CompareTag("LeftPaddle"))
+        {
+            gameManager.AddTouch("1");
+        }
+        else if (other.gameObject.CompareTag("RightPaddle"))
+        {
+            gameManager.AddTouch("2");
+        }
     }
     Vector2 GetRandomDirection()
     {
@@ -49,5 +57,14 @@ public class BallMove : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         GetComponent<Rigidbody2D>().AddForce(GetRandomDirection() * InitForce * 0.8f);
     }
-
+    private void LimitBallSpeed()
+    {
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb.velocity.magnitude > maxSpeed) 
+        {
+            
+            rb.velocity = rb.velocity.normalized * maxSpeed; 
+        }
+        //Debug.Log("Current Speed: " + rb.velocity.magnitude);
+    }
 }
