@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
     public TMP_Text startText;
     public TMP_Text winnerText;
     private bool gameStarted = false;
+    public BallMove ballMove;
+    public PaddleMove leftPaddle;
+    public PaddleMove rightPaddle;
 
     void Awake()
     {
@@ -19,7 +22,6 @@ public class GameManager : MonoBehaviour
     {
         // Freeze the game at the beginning
         Time.timeScale = 0f;
-        // Shows the start message
         startText.gameObject.SetActive(true);
         winnerText.gameObject.SetActive(false);
     }
@@ -29,17 +31,16 @@ public class GameManager : MonoBehaviour
         // Check if the player presses the "Space" key to start the game
         if (!gameStarted && Input.GetKeyDown(KeyCode.Space))
         {
-            StartGame();
+            gameStarted = true;
+            startText.gameObject.SetActive(false);
+            winnerText.gameObject.SetActive(false);
+            Time.timeScale = 1f;
+            leftPaddle.ResetPosition();
+            rightPaddle.ResetPosition();
+            ballMove.startGame();
         }
     }
 
-    void StartGame()
-    {
-        gameStarted = true;
-        //Time.timeScale = 1f;
-        // Hide the start message
-        startText.gameObject.SetActive(false);
-    }
     public void EndGame(string winner)
     {
         gameStarted = false;
@@ -48,5 +49,6 @@ public class GameManager : MonoBehaviour
         // Show the winner message
         winnerText.text = winner + "\nWIN";
         winnerText.gameObject.SetActive(true);
+        startText.gameObject.SetActive(true);
     }
 }

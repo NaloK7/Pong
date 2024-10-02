@@ -7,6 +7,7 @@ public class PaddleMove : MonoBehaviour
     public float PaddleSpeed;
     public KeyCode UpKey;
     public KeyCode DownKey;
+    private Vector3 initialPosition;
 
     private Rigidbody2D rb;
 
@@ -14,6 +15,7 @@ public class PaddleMove : MonoBehaviour
     {
        
         rb = GetComponent<Rigidbody2D>();
+        initialPosition = transform.position;
     }
 
     void Update()
@@ -27,5 +29,11 @@ public class PaddleMove : MonoBehaviour
         {
             rb.AddForce(Vector2.down * PaddleSpeed);
         }
+    }
+
+    public void ResetPosition()
+    {
+        // Remets la raquette à sa position initiale
+        transform.position = initialPosition;
     }
 }
