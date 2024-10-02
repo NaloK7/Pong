@@ -8,6 +8,8 @@ TagManager:
   - LeftWall
   - RightWall
   - BallBouncer
+  - LeftPaddle
+  - RightPaddle
   layers:
   - Default
   - TransparentFX
