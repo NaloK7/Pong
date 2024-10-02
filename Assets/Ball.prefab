@@ -97,4 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 205f14df888603c43902f7f9f4544510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force: 0
+  InitForce: 0
+  MoveSpeed: 0
+  endGameMessage: {fileID: 0}

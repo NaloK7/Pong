@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6555157189215670560}
   - component: {fileID: 6555157189215670561}
-  - component: {fileID: 1342784430552055839}
+  - component: {fileID: 8572122033563951874}
   m_Layer: 0
   m_Name: RightPaddle
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1342784430552055839
+--- !u!114 &8572122033563951874
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,6 +94,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6555157189215670566}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84eb290f9f1052e4a938faf2e1857ddc, type: 3}
+  m_Script: {fileID: 11500000, guid: c8f338585cb1bc94d9ddd3af3d6c25cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PaddleSpeed: 150
+  UpKey: 273
+  DownKey: 274
