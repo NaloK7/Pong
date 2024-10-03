@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class BallMove : MonoBehaviour
@@ -44,6 +45,7 @@ public class BallMove : MonoBehaviour
             gameManager.AddTouch("2");
         }
     }
+
     Vector2 GetRandomDirection()
     {
         float x = Random.Range(0.5f, 1.0f) * (Random.value > 0.5f ? 1 : -1);
